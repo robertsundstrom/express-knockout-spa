@@ -14,16 +14,16 @@ module.exports = function (config) {
 		jspm: {
 			config: 'public/jspm.config.js',
 			loadFiles: [
-				'public/*.spec.js'
+				'public/tests/*.spec.js'
 			],
 			serveFiles: [
-				'public/!(*spec).js'
+				'public/tests/*.spec.js'
 			]
 		},
 
 		proxies: {
 			'/public/': '/base/public/',
-			'/jspm_packages/': '/public/jspm_packages/'
+			'/jspm_packages/': '/base/public/jspm_packages/'
 		},
 
 		browsers: ['PhantomJS'],

@@ -3,6 +3,7 @@ import router from "app/router";
 
 import "bootstrap-sass/assets/stylesheets/_bootstrap.scss!";
 import "bootstrap-sass/assets/javascripts/bootstrap";
+
 import "./styles/Site.scss!";
 
 class Main {

@@ -35,7 +35,7 @@ class ES6Loader {
 				let template = await System.import(componentConfig.template.require);			
 				ko.components.defaultLoader.loadTemplate(name, template, async (elements) => {
 					try { 
-						let obj = {
+						let obj: any = {
 							template: elements,
 						};
 						if("viewModel" in componentConfig) {

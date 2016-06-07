@@ -15,9 +15,17 @@ import hasher from "hasher";
 //    change(e.originalEvent.state);
 //})
 
+export interface Route {
+	url: string;
+	page: string;
+	params: {};
+}
+
 class Router {
+	currentRoute: Route;
+
 	constructor() {
-		this.currentRoute = this.currentRoute = ko.observable({});
+		this.currentRoute = <any>ko.observable({});
 	}
 	
 	private parseHash(newHash, oldHash) {
@@ -52,9 +60,9 @@ class Router {
 	}
 
 	config(config) {
-		ko.utils.arrayForEach(config.routes,(route) => {
+		ko.utils.arrayForEach(config.routes,(route: Route) => {
 			crossroads.addRoute(route.url,(requestParams) => {
-				this.currentRoute(ko.utils.extend(requestParams, route.params));
+				(<any>this.currentRoute)(ko.utils.extend(requestParams, route.params));
 			});
 		});
 		//crossroads.routed.add(console.log, console);

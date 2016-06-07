@@ -49,6 +49,10 @@ ko.components.register('contact-page', {
 });
 
 /* Components */
+ko.components.register('nav-bar', {
+		require: 'components/nav-bar/nav-bar'
+});
+
 ko.components.register('greeter', {
 		require: 'components/greeter/greeter'
 });

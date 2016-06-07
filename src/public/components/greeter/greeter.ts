@@ -3,6 +3,8 @@ import $ from "jquery";
 import greeterTemplate from "./greeter.html!text";
 
 export class greeterViewModel {
+	name: string;
+
 	constructor(params) {		
 		this.name = params.name;
 	}

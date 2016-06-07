@@ -16,6 +16,8 @@ import hasher from "hasher";
 //})
 
 class Router {
+	currentRoute: any;
+
 	constructor() {
 		this.currentRoute = this.currentRoute = ko.observable({});
 	}
@@ -52,7 +54,7 @@ class Router {
 	}
 
 	config(config) {
-		ko.utils.arrayForEach(config.routes,(route) => {
+		ko.utils.arrayForEach(config.routes,(route: any) => {
 			crossroads.addRoute(route.url,(requestParams) => {
 				this.currentRoute(ko.utils.extend(requestParams, route.params));
 			});

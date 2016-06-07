@@ -7,6 +7,10 @@ import "bootstrap-sass/assets/javascripts/bootstrap";
 import "./styles/Site.scss!";
 
 class Main {
+	title: string;
+	year: number;
+	route: any;
+
 	constructor() {
 		this.title = "My project";
 		this.year = new Date().getFullYear();

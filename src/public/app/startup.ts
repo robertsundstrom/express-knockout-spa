@@ -21,6 +21,7 @@ router.config({
 ko.components.loaders.unshift(es6Loader);
 
 /* Pages */
+
 ko.components.register('home-page', {
 	template: {
 		require: 'components/home-page/home.html!text'
@@ -49,6 +50,11 @@ ko.components.register('contact-page', {
 });
 
 /* Components */
+
+ko.components.register('nav-bar', {
+		require: 'components/nav-bar/nav-bar'
+});
+
 ko.components.register('greeter', {
 		require: 'components/greeter/greeter'
 });

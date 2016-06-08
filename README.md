@@ -3,9 +3,13 @@ Template for Knockout SPA on Express.js using SystemJS.
 
 ## Run
 
-To run the application:
+Make sure that you have JSPM installed:
 
-    $ npm install
+    $ npm install -g jspm@beta
+
+To install and run the application:
+
+    $ npm install   # Installs SystemJS/JSPM dependencies
     $ npm start
 
 ## Bundling

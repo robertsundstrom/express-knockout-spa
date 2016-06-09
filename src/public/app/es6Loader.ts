@@ -24,6 +24,9 @@ class ES6Loader {
 									o = viewModel;
 								}
 								ko.track(o);
+								if("initialize" in o) {
+									o.initialize();
+								}
 								return o;
 							}
 						});				
@@ -51,6 +54,9 @@ class ES6Loader {
 									o = viewModel;
 								}
 								ko.track(o);	
+								if("initialize" in o) {
+									o.initialize();
+								}
 								return o;
 							}
 						}

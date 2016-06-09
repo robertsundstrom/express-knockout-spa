@@ -3,7 +3,7 @@
 // Definitions by: Sebastián Galiano <https://github.com/sgaliano/>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 
-/// <reference path="../knockout/index.d.ts" />
+/// <reference path="knockout.d.ts" />
 
 interface KnockoutStatic {
     track(obj: any, propertyNames?: Array<string>): any;

@@ -1,10 +1,11 @@
 import ko from "knockout";
 import router from "app/router";
 
-import "bootstrap-sass/assets/stylesheets/_bootstrap.scss!";
-import "bootstrap-sass/assets/javascripts/bootstrap";
+// Import styles (incl. bootstrap-sass)
+import "styles!scss";
 
-import "./styles/Site.scss!";
+// Import Bootstrap JS
+import "bootstrap-sass/assets/javascripts/bootstrap";
 
 class Main {
 	title: string;

@@ -1,8 +1,8 @@
 import $ from "jquery";
-
 import ko from "knockout";
 import "knockout-es5";
 import "knockout-projections";
+import "knockout-validation";
 
 import router from "app/router";
 import Main from "app/main";
@@ -19,6 +19,17 @@ router.config({
 
 // Register the SystemJS loader.
 ko.components.loaders.unshift(es6Loader);
+
+// Validation
+ko.validation.init({
+	grouping : { deep: true, observable: true }, 
+	decorateInputElement: true, 
+	parseInputAttributes: true, 
+	decorateElementOnModified: false, 
+	messagesOnModified: false,
+	errorElementClass: 'has-error',
+    errorMessageClass: 'help-block'},
+	true);
 
 /* Pages */
 ko.components.register('home-page', {
@@ -51,6 +62,10 @@ ko.components.register('contact-page', {
 /* Components */
 ko.components.register('nav-bar', {
 		require: 'components/nav-bar/nav-bar'
+});
+
+ko.components.register('contact-form', {
+		require: 'components/contact-form/contact-form'
 });
 
 ko.components.register('greeter', {

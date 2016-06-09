@@ -2,10 +2,42 @@ SystemJS.config({
   paths: {
     "github:": "jspm_packages/github/",
     "npm:": "jspm_packages/npm/",
+    "components/": "components/",
+    "pages/": "pages/",
     "app/": "app/"
   },
   browserConfig: {
-    "baseURL": "/"
+    "baseURL": "/",
+    "bundles": {
+      "build.js": [
+        "app/startup.ts",
+        "app/es6loader.ts",
+        "github:knockout/knockout@3.4.0/dist/knockout.debug.js",
+        "github:knockout/knockout@3.4.0.json",
+        "npm:systemjs-plugin-babel@0.0.12/babel-helpers/createClass.js",
+        "npm:systemjs-plugin-babel@0.0.12.json",
+        "npm:systemjs-plugin-babel@0.0.12/babel-helpers/classCallCheck.js",
+        "npm:systemjs-plugin-babel@0.0.12/regenerator-runtime.js",
+        "app/main.ts",
+        "github:twbs/bootstrap-sass@3.3.6/assets/javascripts/bootstrap.js",
+        "github:twbs/bootstrap-sass@3.3.6.json",
+        "styles/application.scss!github:mobilexag/plugin-sass@0.4.3/index.js",
+        "github:mobilexag/plugin-sass@0.4.3.json",
+        "app/router.ts",
+        "npm:hasher@1.2.0/dist/js/hasher.js",
+        "npm:hasher@1.2.0.json",
+        "npm:signals@1.0.0/dist/signals.js",
+        "npm:signals@1.0.0.json",
+        "npm:crossroads@0.12.2/dist/crossroads.js",
+        "npm:crossroads@0.12.2.json",
+        "github:Knockout-Contrib/Knockout-Validation@2.0.3/dist/knockout.validation.js",
+        "github:Knockout-Contrib/Knockout-Validation@2.0.3.json",
+        "github:SteveSanderson/knockout-projections@1.1.0/dist/knockout-projections.js",
+        "github:SteveSanderson/knockout-projections@1.1.0.json",
+        "github:SteveSanderson/knockout-es5@0.4.4/src/knockout-es5.js",
+        "github:SteveSanderson/knockout-es5@0.4.4.json"
+      ]
+    }
   },
   devConfig: {
     "map": {
@@ -46,7 +78,10 @@ SystemJS.config({
     ]
   },
   typescriptOptions: {
-    "tsconfig": true
+    "module": "es6",
+    "target": "es6",
+    "tsconfig": true,
+    "typeCheck": false
   },
   packages: {
     "app": {
@@ -54,7 +89,8 @@ SystemJS.config({
       "main": "startup.ts",
       "meta": {
         "*.ts": {
-          "loader": "plugin-typescript"
+          "loader": "plugin-typescript",
+          "typings": "typings"
         }
       }
     },
@@ -66,12 +102,11 @@ SystemJS.config({
         }
       }
     },
-    "pages": {
-      "defaultExtension": "ts",
+    "styles": {
+      "defaultExtension": "scss",
+      "main": "application.scss",
       "meta": {
-        "*.ts": {
-          "loader": "plugin-typescript"
-        }
+        "*.scss": {}
       }
     }
   }
@@ -98,6 +133,7 @@ SystemJS.config({
     "knockout": "github:knockout/knockout@3.4.0",
     "knockout-es5": "github:SteveSanderson/knockout-es5@0.4.4",
     "knockout-projections": "github:SteveSanderson/knockout-projections@1.1.0",
+    "knockout-validation": "github:Knockout-Contrib/Knockout-Validation@2.0.3",
     "path": "github:jspm/nodelibs-path@0.2.0-alpha",
     "plugin-babel": "npm:systemjs-plugin-babel@0.0.12",
     "process": "github:jspm/nodelibs-process@0.2.0-alpha",

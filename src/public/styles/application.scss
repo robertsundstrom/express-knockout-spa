@@ -1,0 +1,14 @@
+//Import bootstrap-sprockets
+//@import "jspm:bootstrap-sass/assets/stylesheets/bootstrap-sprockets";
+
+// Import bootswatch theme variables
+//@import "variables";
+
+// Then bootstrap itself
+@import "jspm:bootstrap-sass/assets/stylesheets/bootstrap";
+
+// And finally bootswatch style itself
+//@import "bootswatch";
+
+// Whatever application styles you have go last
+@import "site";

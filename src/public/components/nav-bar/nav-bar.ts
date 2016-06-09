@@ -1,11 +1,11 @@
 import ko from "knockout";
-import router, { Route } from "app/router";
+import router from "app/router";
 
 import navbarTemplate from "./nav-bar.html!text";
 
-export class navBarViewModel {
+export class NavBarViewModel {
     title: string;
-    route: Route;
+    route: any;
 
 	constructor(params) {
 		this.title = params.title;
@@ -13,4 +13,4 @@ export class navBarViewModel {
 	}
 }
 
-export default { viewModel: navBarViewModel, template: navbarTemplate };
+export default { viewModel: NavBarViewModel, template: navbarTemplate };

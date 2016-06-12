@@ -13,7 +13,11 @@ router.config({
 		{url: '', params: {page: 'home-page'}},
 		{url: 'about', params: {page: 'about-page'}},
 		{url: 'contact', params: {page: 'contact-page'}},
-		{url: 'foo', params: {page: 'foo-page'}},
+		{url: 'login', params: {page: 'login-page'}},
+		{url: 'register', params: {page: 'register-page'}},
+		{url: 'profile', params: {page: 'profile-page'}},
+		{url: 'forgot-password', params: {page: 'forgot-password-page'}},
+		{url: 'reset-password', params: {page: 'reset-password-page'}}
 	]
 });
 
@@ -59,9 +63,58 @@ ko.components.register('contact-page', {
 	}
 });
 
+ko.components.register('login-page', {
+	template: {
+		require: 'components/login-page/login.html!text'
+	},
+	viewModel: {
+		require: 'components/login-page/login'
+	}
+});
+
+ko.components.register('register-page', {
+	template: {
+		require: 'components/register-page/register.html!text'
+	},
+	viewModel: {
+		require: 'components/register-page/register'
+	}
+});
+
+ko.components.register('profile-page', {
+	template: {
+		require: 'components/profile-page/profile.html!text'
+	},
+	viewModel: {
+		require: 'components/profile-page/profile'
+	}
+});
+
+ko.components.register('forgot-password-page', {
+	template: {
+		require: 'components/forgot-password-page/forgot-password.html!text'
+	},
+	viewModel: {
+		require: 'components/forgot-password-page/forgot-password'
+	}
+});
+
+ko.components.register('reset-password-page', {
+	template: {
+		require: 'components/reset-password-page/reset-password.html!text'
+	},
+	viewModel: {
+		require: 'components/reset-password-page/reset-password'
+	}
+});
+
 /* Components */
 ko.components.register('nav-bar', {
 		require: 'components/nav-bar/nav-bar'
+});
+
+ko.components.register('login-partial', {
+		require: 'components/login-partial/login-partial'
 });
 
 ko.components.register('contact-form', {

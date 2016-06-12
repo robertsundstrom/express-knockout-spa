@@ -1,0 +1,18 @@
+<!-- ko if: loggedIn -->
+    <form method="post" id="logoutForm" class="navbar-right">
+        <ul class="nav navbar-nav navbar-right">
+            <li data-bind="css: { active: route.page === 'profile-page' }">
+                <a title="Manage">Hello <span data-bind="text: username"></span>!</a>
+            </li>
+            <li>
+                <button type="submit" class="btn btn-link navbar-btn navbar-link" data-bind="click: logOff">Log off</button>
+            </li>
+        </ul>
+    </form>
+<!-- /ko -->
+<!-- ko if: !loggedIn -->
+    <ul class="nav navbar-nav navbar-right">
+        <li data-bind="css: { active: route.page === 'register-page' }"><a href="#register">Register</a></li>
+        <li data-bind="css: { active: route.page === 'login-page' }"><a href="#login">Log in</a></li>
+    </ul>
+<!-- /ko -->
